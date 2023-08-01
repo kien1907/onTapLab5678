@@ -1,6 +1,5 @@
 package com.example.OnTapLab5678.Util;
 
-import com.example.OnTapLab5678.Entity.MayTInh;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -22,9 +21,7 @@ public class HibernateUtil {
         properties.put(Environment.USER, "sa");
         properties.put(Environment.PASS, "1");
         properties.put(Environment.SHOW_SQL, "true");
-
         conf.setProperties(properties);
-        conf.addAnnotatedClass(MayTInh.class);
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
         FACTORY = conf.buildSessionFactory(registry);
